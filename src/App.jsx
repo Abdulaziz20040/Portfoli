@@ -1,11 +1,11 @@
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import "./App.css";
-import Rotlayout from "./Rotlayout";
-import Home from "./pages/home";
-import About from "./pages/About";
-import MyProjects from "./pages/MyProjects";
-import MySkills from "./pages/MySkills";
-import Contact from "./pages/Contact";
+import Home from "./pages/home.jsx";
+import About from "./pages/About.jsx";
+import MyProjects from "./pages/MyProjects.jsx";
+import MySkills from "./pages/MySkills.jsx";
+import Contact from "./pages/Contact.jsx";
+import Rotlayout from "./pages/Rotlayout.jsx";
 
 function App() {
   const router = createBrowserRouter([
@@ -14,7 +14,7 @@ function App() {
       element: <Rotlayout />,
       children: [
         {
-          index: true, // Asosiy sahifa
+          index: true,
           element: <Home />,
         },
         {

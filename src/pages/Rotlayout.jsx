@@ -1,9 +1,8 @@
 import { FaEnvelope, FaFolder, FaTools } from "react-icons/fa";
-import { HiUser } from "react-icons/hi";
 import { HiMiniUser } from "react-icons/hi2";
 import { IoMdHome } from "react-icons/io";
 import { Outlet, Link } from "react-router-dom";
-import "./App.css";
+import "../App.css";
 
 const Rotlayout = () => {
   return (

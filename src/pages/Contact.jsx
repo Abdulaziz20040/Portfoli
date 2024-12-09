@@ -3,7 +3,6 @@ import { motion } from "framer-motion";
 import {
   FaPhone,
   FaEnvelope,
-  FaLinkedin,
   FaGithub,
   FaInstagram,
   FaMapMarkerAlt,
