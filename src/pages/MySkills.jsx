@@ -80,11 +80,11 @@ function MySkills() {
       animate="visible"
     >
       {/* Grid container with responsive breakpoints */}
-      <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-3 lg:grid-cols-4 gap-6 px-6">
+      <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 xl:grid-cols-5 gap-8 mt-10">
         {skills.map((skill, index) => (
           <motion.div
             key={index}
-            className="relative flex items-center justify-center w-[100px] h-[140px] shadow-lg rounded-lg hover:shadow-xl transition-shadow group"
+            className="relative bacgrpund flex items-center justify-center w-[130px] h-[140px] shadow-lg rounded-lg hover:shadow-xl transition-shadow group"
             variants={itemVariants}
           >
             {/* Skill Icon */}

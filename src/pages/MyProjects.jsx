@@ -32,7 +32,7 @@ function MyProjects() {
   };
 
   return (
-    <div className="w-full flex justify-center items-center px-4 py-8">
+    <div className="w-full flex justify-center items-center">
       {/* Bosh konteyner */}
       <motion.div
         className="flex flex-col lg:flex-row lg:gap-8 md:gap-6 w-full h-auto"
