@@ -1,0 +1,47 @@
+{
+  "translation": {
+    "home": {
+      "hometitle": "Hello! I am",
+      "hometitle2": "frontend developer.",
+      "description": "work with modern technologies such as React, TypeScript, Tailwind CSS, Next.js. My goal is to create intuitive, efficient, and beautiful websites.",
+      "description2": "I have gained experience working in a variety of ways over the past 1 year, and I put design, coding, and user first.",
+      "skl1": "Websites based on React and Next.js introduced",
+      "skl2": "Modern, intuitive and responsive designs",
+      "skl3": "Creating beautiful and fast interfaces with Tailwind CSS",
+      "skl4": "Adding interactivity with JavaScript and TypeScript"
+    },
+    "about": {
+      "abouttitle": "About me",
+      "aboutdescription": "Hello! I am Abdulaziz, a professional Frontend Developer. I work with modern technologies such as React, TypeScript, Tailwind CSS. I have experience in database, UI/UX design, and web solutions.",
+      "age": "age: 20 years old",
+      "locate": "My place of residence: Tashkent, Uzbekistan",
+      "lan": " Languages: Uzbek",
+      "abouttitle2": "My goal",
+      "aboutdesc2": "My goal is to create intuitive, effective, and user-friendly websites and to continuously improve my experience.",
+      "abouttitle3": "Work experience",
+      "aboutdesc3": "Frontend Developer | 1+ years of experience",
+      "aboutdesc4": "Create intuitive and interactive web projects using React, TypeScript, and Next.js technologies"
+    },
+    "contact": {
+      "contitle": "Contact me",
+      "contdesc": "Contact us for questions, suggestions or to arrange a job.",
+      "Instagram": "Instagram",
+      "map": "Forward to address",
+      "send": "Send a message",
+      "placeholder1": "Your name",
+      "placeholder2": "Email",
+      "placeholder3": "Write a message...",
+      "submit": " Send"
+    },
+    "Rotlayout": {
+      "name1": "Home",
+      "name2": "About",
+      "name3": "My Projects",
+      "name4": "My Skills",
+      "name5": "Contact",
+      "uzb": "UZB",
+      "rus": "RUS",
+      "eng": "ENG"
+    }
+  }
+}

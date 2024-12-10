@@ -1,0 +1,47 @@
+{
+  "translation": {
+    "home": {
+      "hometitle": " Salom! Men",
+      "hometitle2": "Frontend Developerman.",
+      "description": " React,TypeScript,Tailwind CSS, Next.js kabi zamonaviy texnologiyalar   bilan ishlayman. Mening maqsadim intuitiv, samarali va chiroyli veb-saytlar yaratishdir.",
+      "description2": " 1 Yil davomida turli loyihalarda ishlash orqali tajriba orttirdim va dizayn, kodlash, hamda foydalanuvchi tajribasini birinchi o'ringa  qo'yaman.",
+      "skl1": "React va Next.js asosida veb-saytlar yaratish",
+      "skl2": "Modern, intuitiv va responsiv dizaynlar",
+      "skl3": "Tailwind CSS bilan chiroyli va tezkor interfeyslar yaratish",
+      "skl4": "JavaScript va TypeScript bilan interaktivlik qo'shish"
+    },
+    "about": {
+      "abouttitle": "Men haqimda",
+      "aboutdescription": "Salom! Men Abdulazizman, professional Frontend Developer. React, TypeScript, Tailwind CSS kabi zamonaviy texnologiyalar bilan ishlayman. Ma'lumotlar bazasi, UI/UX dizayn va veb-yechimlar yaratishda tajribam bor.",
+      "age": " Yoshim: 20 yosh",
+      "locate": "Yashash joyim: Toshkent, O‘zbekiston",
+      "lan": " Tillar: O'zbek tili",
+      "abouttitle2": "Maqsadim",
+      "aboutdesc2": "Mening maqsadim — intuitiv, samarali va foydalanuvchi uchun qulay veb-saytlar yaratish va tajribamni doimiy ravishda yaxshilash.",
+      "abouttitle3": "Ish Tajribasi",
+      "aboutdesc3": "Frontend Developer | 1 yildan ortiq tajriba ",
+      "aboutdesc4": "React, TypeScript va Next.js texnologiyalaridan foydalanib, intuitiv va interaktiv veb-loyihalarni yaratish"
+    },
+    "contact": {
+      "contitle": "Menga Aloqa chiqish",
+      "contdesc": "Savollar, takliflar yoki ish biriktirish uchun bog'laning",
+      "Instagram": "Instagram",
+      "map": "Manzilga yo'naltirish",
+      "send": "Xabar Yuboring",
+      "placeholder1": "Ismingiz",
+      "placeholder2": "Email",
+      "placeholder3": "Xabarni yozing...",
+      "submit": " Yuborish"
+    },
+    "Rotlayout": {
+      "name1": "Home",
+      "name2": "About",
+      "name3": "My Projects",
+      "name4": "My Skills",
+      "name5": "Contact",
+      "uzb": "UZB",
+      "rus": "RUS",
+      "eng": "ENG"
+    }
+  }
+}

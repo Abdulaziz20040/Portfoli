@@ -7,8 +7,11 @@ import {
   FaInstagram,
   FaMapMarkerAlt,
 } from "react-icons/fa";
+import { useTranslation } from "react-i18next";
 
 function Contact() {
+  const { t } = useTranslation();
+
   const handleCopy = () => {
     navigator.clipboard.writeText("+998 77 014 50 47");
   };
@@ -42,10 +45,10 @@ function Contact() {
       {/* Title Section */}
       <div className="text-start md:text-left mb-8">
         <h1 className="text-3xl md:text-4xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-purple-500">
-          Menga Aloqa chiqish
+          {t("contact.contitle")}
         </h1>
         <p className="text-gray-200 text-sm md:text-base mt-2">
-          Savollar, takliflar yoki ish biriktirish uchun bog'laning
+          {t("contact.contdesc")}
         </p>
       </div>
 
@@ -82,7 +85,7 @@ function Contact() {
           >
             <FaInstagram className="text-pink-400 text-lg" />
             <span className="text-gray-200 text-sm md:text-base">
-              Instagram
+              {t("contact.Instagram")}
             </span>
           </div>
 
@@ -93,7 +96,7 @@ function Contact() {
           >
             <FaMapMarkerAlt className="text-red-400 text-lg" />
             <span className="text-gray-200 text-sm md:text-base">
-              Manzilga yo'naltirish
+              {t("contact.map")}
             </span>
           </div>
 
@@ -110,28 +113,28 @@ function Contact() {
         {/* Message Section */}
         <div className="bg-gray-800 rounded-lg p-4 md:p-8 shadow-lg">
           <h2 className="text-lg md:text-2xl font-semibold mb-3 text-gray-200">
-            Xabar Yuboring
+            {t("contact.send")}
           </h2>
           <form className="space-y-3">
             <input
               type="text"
-              placeholder="Ismingiz"
+              placeholder={t("contact.placeholder1")}
               className="w-full p-2 rounded-md bacgrpund text-gray-200 focus:ring-2 focus:ring-blue-400"
             />
             <input
               type="email"
-              placeholder="Email"
+              placeholder={t("contact.placeholder2")}
               className="w-full p-2 rounded-md bacgrpund text-gray-200 focus:ring-2 focus:ring-green-400"
             />
             <textarea
-              placeholder="Xabarni yozing..."
+              placeholder={t("contact.placeholder3")}
               className="w-full p-2 rounded-md bacgrpund text-gray-200 focus:ring-2 focus:ring-blue-400"
             />
             <button
               type="submit"
               className="w-full bg-blue-600 hover:bg-blue-700 text-white py-2 px-4 rounded-lg transition"
             >
-              Yuborish
+              {t("contact.submit")}
             </button>
           </form>
         </div>

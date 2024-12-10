@@ -1,17 +1,24 @@
 import React, { useState } from "react";
-import { FaEllipsisV, FaEnvelope, FaFolder, FaTools } from "react-icons/fa";
+import { FaEnvelope, FaFolder, FaTools } from "react-icons/fa";
 import { HiMiniBars3, HiMiniUser } from "react-icons/hi2";
 import { IoMdHome } from "react-icons/io";
 import { Outlet, Link } from "react-router-dom";
-import { Drawer } from "antd"; // Ant Design Drawer import
+import { Drawer, Select } from "antd";
 import "../App.css";
+import { useTranslation } from "react-i18next";
+const { Option } = Select;
 
 const Rotlayout = () => {
+  const { t, i18n } = useTranslation();
+
   const [showMenuDrawer, setShowMenuDrawer] = useState(false);
 
-  // Function to handle link clicks and close the Drawer
   const handleMenuClick = () => {
     setShowMenuDrawer(false);
+  };
+
+  const handleClick = () => {
+    window.open("https://t.me/My_Projectc", "_blank");
   };
 
   return (
@@ -21,24 +28,33 @@ const Rotlayout = () => {
         <div className="flex flex-col gap-4 bacgrpund p-4 rounded-xl">
           <Link to="/" className="flex gap-2 items-center">
             <IoMdHome />
-            Home
+            {t("Rotlayout.name1")}
           </Link>
           <Link to="/about" className="flex items-center gap-2">
             <HiMiniUser />
-            About
+            {t("Rotlayout.name2")}
           </Link>
-          <Link to="/projects" className="flex items-center gap-2">
+          <button className="flex items-center gap-2" onClick={handleClick}>
             <FaFolder />
-            My Projects
-          </Link>
+            {t("Rotlayout.name3")}
+          </button>
           <Link to="/skills" className="flex items-center gap-2">
             <FaTools />
-            My Skills
+            {t("Rotlayout.name4")}
           </Link>
           <Link to="/contact" className="flex items-center gap-2">
             <FaEnvelope />
-            Contact
+            {t("Rotlayout.name5")}
           </Link>
+          <Select
+            onChange={(value) => i18n.changeLanguage(value)} // tuzatilgan joy
+            defaultValue="uz"
+            style={{ width: 120, marginBottom: "1rem" }}
+          >
+            <Option value="uz">{t("Rotlayout.uzb")}</Option>
+            <Option value="en">{t("Rotlayout.eng")}</Option>
+            <Option value="ru">{t("Rotlayout.rus")}</Option>
+          </Select>
         </div>
       </div>
 
@@ -46,13 +62,14 @@ const Rotlayout = () => {
       <Drawer
         title="Menu"
         placement="right"
-        closable={true}
+        closable={false} // Remove the default close (X) button
         onClose={() => setShowMenuDrawer(false)}
         open={showMenuDrawer}
         width={240}
-        className=""
         style={{
           borderRadius: "20px 0px 0px 20px",
+          backgroundColor: "#333333",
+          color: "#ffffff",
         }}
       >
         <div className="flex flex-col gap-4">
@@ -62,7 +79,7 @@ const Rotlayout = () => {
             onClick={handleMenuClick}
           >
             <IoMdHome />
-            Home
+            {t("Rotlayout.name1")}
           </Link>
           <Link
             to="/about"
@@ -70,23 +87,19 @@ const Rotlayout = () => {
             onClick={handleMenuClick}
           >
             <HiMiniUser />
-            About
+            {t("Rotlayout.name2")}
           </Link>
-          <Link
-            to="/projects"
-            className="flex items-center gap-2"
-            onClick={handleMenuClick}
-          >
+          <button className="flex items-center gap-2" onClick={handleClick}>
             <FaFolder />
-            My Projects
-          </Link>
+            {t("Rotlayout.name3")}
+          </button>
           <Link
             to="/skills"
             className="flex items-center gap-2"
             onClick={handleMenuClick}
           >
             <FaTools />
-            My Skills
+            {t("Rotlayout.name4")}
           </Link>
           <Link
             to="/contact"
@@ -94,8 +107,17 @@ const Rotlayout = () => {
             onClick={handleMenuClick}
           >
             <FaEnvelope />
-            Contact
+            {t("Rotlayout.name5")}
           </Link>
+          <Select
+            onChange={(value) => i18n.changeLanguage(value)} // tuzatilgan joy
+            defaultValue="uz"
+            style={{ width: 120, marginBottom: "1rem" }}
+          >
+            <Option value="uz">{t("Rotlayout.uzb")}</Option>
+            <Option value="en">{t("Rotlayout.eng")}</Option>
+            <Option value="ru">{t("Rotlayout.rus")}</Option>
+          </Select>
         </div>
       </Drawer>
 
@@ -109,7 +131,7 @@ const Rotlayout = () => {
         className="lg:hidden fixed top-7 right-4 z-20 text-white p-2 rounded-md"
         onClick={() => setShowMenuDrawer(true)}
       >
-        <HiMiniBars3 />
+        <HiMiniBars3 className=" text-[19px]" />
       </button>
     </div>
   );

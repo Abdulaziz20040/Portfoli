@@ -1,9 +1,11 @@
 import React from "react";
 import { motion } from "framer-motion";
 import { FaReact, FaPaintBrush, FaCss3Alt, FaCode } from "react-icons/fa";
+import { useTranslation } from "react-i18next";
 
 function Home() {
-  // Animatsiyaning boshlanishi va oxiri uchun variantlar
+  const { t } = useTranslation();
+
   const animationVariants = {
     hidden: { opacity: 0, y: -50 },
     visible: { opacity: 1, y: 0 },
@@ -20,9 +22,9 @@ function Home() {
         variants={animationVariants}
         transition={{ duration: 1 }}
       >
-        Salom! Men{" "}
+        {t("home.hometitle")}
         <span className="text-[rgb(240,86,200)] font-bold">Abdulaziz</span>.
-        Frontend Developerman.
+        {t("home.hometitle2")}
       </motion.h1>
 
       {/* Animated Paragraph 1 */}
@@ -34,9 +36,7 @@ function Home() {
         variants={animationVariants}
         transition={{ duration: 1, delay: 0.2 }}
       >
-        React, TypeScript, Tailwind CSS, Next.js kabi zamonaviy texnologiyalar
-        bilan ishlayman. Mening maqsadim intuitiv, samarali va chiroyli
-        veb-saytlar yaratishdir.
+        {t("home.description")}
       </motion.p>
 
       {/* Animated Paragraph 2 */}
@@ -48,9 +48,7 @@ function Home() {
         variants={animationVariants}
         transition={{ duration: 1, delay: 0.4 }}
       >
-        1 Yil davomida turli loyihalarda ishlash orqali tajriba orttirdim va
-        dizayn, kodlash, hamda foydalanuvchi tajribasini birinchi o'ringa
-        qo'yaman.
+        {t("home.description2")}
       </motion.p>
 
       {/* Animated Grid of Skills */}
@@ -67,7 +65,7 @@ function Home() {
           <div className="flex items-center gap-4">
             <FaReact className="text-4xl md:text-5xl" />
             <div className="flex-1 text-sm md:text-base lg:text-lg">
-              ✅ React va Next.js asosida veb-saytlar yaratish
+              ✅{t("home.skl1")}
             </div>
           </div>
         </motion.div>
@@ -77,7 +75,7 @@ function Home() {
           <div className="flex items-center gap-4">
             <FaPaintBrush className="text-4xl md:text-5xl" />
             <div className="flex-1 text-sm md:text-base lg:text-lg">
-              ✅ Modern, intuitiv va responsiv dizaynlar
+              ✅{t("home.skl2")}
             </div>
           </div>
         </motion.div>
@@ -87,7 +85,7 @@ function Home() {
           <div className="flex items-center gap-4">
             <FaCss3Alt className="text-4xl md:text-5xl" />
             <div className="flex-1 text-sm md:text-base lg:text-lg">
-              ✅ Tailwind CSS bilan chiroyli va tezkor interfeyslar yaratish
+              ✅ {t("home.skl3")}
             </div>
           </div>
         </motion.div>
@@ -97,7 +95,7 @@ function Home() {
           <div className="flex items-center gap-4">
             <FaCode className="text-4xl md:text-5xl" />
             <div className="flex-1 text-sm md:text-base lg:text-lg">
-              ✅ JavaScript va TypeScript bilan interaktivlik qo'shish
+              ✅ {t("home.skl4")}
             </div>
           </div>
         </motion.div>
