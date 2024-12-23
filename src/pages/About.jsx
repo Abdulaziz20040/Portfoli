@@ -10,7 +10,6 @@ function About() {
   };
 
   const { t } = useTranslation();
-
   return (
     <div className="min-h-screen px-4 ">
       {/* Matn va rasm joylashuvi uchun asosiy konteyner */}

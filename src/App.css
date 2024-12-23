@@ -22,6 +22,7 @@ body {
   /* Gradient silliqligi */
   background-size: 200% 200%;
   animation: gradientAnimation 10s infinite alternate ease-in-out;
+  height: 100vh;
 }
 
 /* Gradient animatsiyasi */
@@ -135,3 +136,24 @@ body {
 }
 
 /* contact css */
+
+/* text-transparent, bg-clip-text va gradientni CSSda belgilash */
+.gradient-text {
+  background: linear-gradient(to right, #dad8d8, #b9b8b8, #b0b0b0);
+  -webkit-background-clip: text; /* Safari uchun */
+  background-clip: text;
+  color: transparent;
+  font-weight: bold;
+}
+
+/* Select elementining fonini shaffof qilish */
+/* .custom-select .ant-select-selector {
+  background-color: transparent !important;
+  border: none !important; 
+  outline: none;
+  color: linear-gradient(to right, #dad8d8, #b9b8b8, #b0b0b0);
+  -webkit-background-clip: text; 
+  background-clip: text;
+  color: transparent;
+  font-weight: bold;
+} */

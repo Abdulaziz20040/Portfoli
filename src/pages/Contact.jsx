@@ -37,108 +37,97 @@ function Contact() {
 
   return (
     <motion.div
-      className="bacgrpund rounded-xl text-white py-8 px-4 md:px-12"
+      className=" rounded-xl text-white py-8 px-4 md:px-12"
       initial={{ opacity: 0, y: -50 }}
       animate={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.8 }}
     >
       {/* Title Section */}
-      <div className="text-start md:text-left mb-8">
-        <h1 className="text-3xl md:text-4xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-purple-500">
-          {t("contact.contitle")}
-        </h1>
-        <p className="text-gray-200 text-sm md:text-base mt-2">
-          {t("contact.contdesc")}
-        </p>
+      <div className=" text-white py-10 px-5 md:px-20 ">
+        {/* Left Section */}
+        <div className="grid md:grid-cols-2 relative   gap-10 h-[400px] ">
+          <div>
+            <h1 className="text-3xl md:text-5xl  font-bold mb-4">
+              Join the <br /> Community
+            </h1>
+            <hr className=" mt-10" />
+            <div className="  mt-4 flex items-center justify-between">
+              <p className="text-gray-300 text-sm md:text-base mb-4">
+                What's next? Check out our work!
+              </p>
+              <a
+                href="#"
+                className="text-blue-400 hover:text-blue-600 font-semibold flex items-center"
+              >
+                Learn More <span className="ml-2">→</span>
+              </a>
+            </div>
+          </div>
+
+          {/* Right Section */}
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+            {/* Contact Info */}
+            <div className="space-y-4 md:space-y-6">
+              {/* Phone */}
+              <div
+                className="cursor-pointer bacgrpund hover:bg-blue-600 rounded-lg p-3 flex items-center space-x-3"
+                onClick={handleCopy}
+              >
+                <FaPhone className="text-blue-400 text-lg" />
+                <span className="text-gray-200 text-sm md:text-base">
+                  +998 77 014 50 47
+                </span>
+              </div>
+
+              {/* Email */}
+              <div
+                className="cursor-pointer w-[340px] bacgrpund hover:bg-green-600 rounded-lg p-3 flex items-center space-x-3"
+                onClick={handleEmailClick}
+              >
+                <FaEnvelope className="text-green-400 text-lg" />
+                <span className="text-gray-200 text-sm md:text-base">
+                  frontenddevelopment17@gmail.com
+                </span>
+              </div>
+
+              {/* Instagram */}
+              <div
+                className="cursor-pointer bacgrpund hover:bg-pink-600 rounded-lg p-3 flex items-center space-x-3"
+                onClick={handleInstagramClick}
+              >
+                <FaInstagram className="text-pink-400 text-lg" />
+                <span className="text-gray-200 text-sm md:text-base">
+                  {t("contact.Instagram")}
+                </span>
+              </div>
+
+              {/* Map */}
+              <div
+                className="cursor-pointer bacgrpund hover:bg-gray-600 rounded-lg p-3 flex items-center space-x-3"
+                onClick={handleMapClick}
+              >
+                <FaMapMarkerAlt className="text-red-400 text-lg" />
+                <span className="text-gray-200 text-sm md:text-base">
+                  {t("contact.map")}
+                </span>
+              </div>
+
+              {/* Github */}
+              <div
+                className="cursor-pointer bacgrpund hover:bg-gray-600 rounded-lg p-3 flex items-center space-x-3"
+                onClick={handleGithubClick}
+              >
+                <FaGithub className="text-gray-400 text-lg" />
+                <span className="text-gray-200 text-sm md:text-base">
+                  GitHub
+                </span>
+              </div>
+            </div>
+          </div>
+        </div>
       </div>
 
       {/* Contact Section */}
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-        {/* Contact Info */}
-        <div className="space-y-4 md:space-y-6">
-          {/* Phone */}
-          <div
-            className="cursor-pointer bacgrpund hover:bg-blue-600 rounded-lg p-3 flex items-center space-x-3"
-            onClick={handleCopy}
-          >
-            <FaPhone className="text-blue-400 text-lg" />
-            <span className="text-gray-200 text-sm md:text-base">
-              +998 77 014 50 47
-            </span>
-          </div>
-
-          {/* Email */}
-          <div
-            className="cursor-pointer bacgrpund hover:bg-green-600 rounded-lg p-3 flex items-center space-x-3"
-            onClick={handleEmailClick}
-          >
-            <FaEnvelope className="text-green-400 text-lg" />
-            <span className="text-gray-200 text-sm md:text-base">
-              frontenddevelopment17@gmail.com
-            </span>
-          </div>
-
-          {/* Instagram */}
-          <div
-            className="cursor-pointer bacgrpund hover:bg-pink-600 rounded-lg p-3 flex items-center space-x-3"
-            onClick={handleInstagramClick}
-          >
-            <FaInstagram className="text-pink-400 text-lg" />
-            <span className="text-gray-200 text-sm md:text-base">
-              {t("contact.Instagram")}
-            </span>
-          </div>
-
-          {/* Map */}
-          <div
-            className="cursor-pointer bacgrpund hover:bg-gray-600 rounded-lg p-3 flex items-center space-x-3"
-            onClick={handleMapClick}
-          >
-            <FaMapMarkerAlt className="text-red-400 text-lg" />
-            <span className="text-gray-200 text-sm md:text-base">
-              {t("contact.map")}
-            </span>
-          </div>
-
-          {/* Github */}
-          <div
-            className="cursor-pointer bacgrpund hover:bg-gray-600 rounded-lg p-3 flex items-center space-x-3"
-            onClick={handleGithubClick}
-          >
-            <FaGithub className="text-gray-400 text-lg" />
-            <span className="text-gray-200 text-sm md:text-base">GitHub</span>
-          </div>
-        </div>
-
-        {/* Message Section */}
-        <div className="bg-gray-800 rounded-lg p-4 md:p-8 shadow-lg">
-          <h2 className="text-lg md:text-2xl font-semibold mb-3 text-gray-200">
-            {t("contact.send")}
-          </h2>
-          <form className="space-y-3">
-            <input
-              type="text"
-              placeholder={t("contact.placeholder1")}
-              className="w-full p-2 rounded-md bacgrpund text-gray-200 focus:ring-2 focus:ring-blue-400"
-            />
-            <input
-              type="email"
-              placeholder={t("contact.placeholder2")}
-              className="w-full p-2 rounded-md bacgrpund text-gray-200 focus:ring-2 focus:ring-green-400"
-            />
-            <textarea
-              placeholder={t("contact.placeholder3")}
-              className="w-full p-2 rounded-md bacgrpund text-gray-200 focus:ring-2 focus:ring-blue-400"
-            />
-            <button
-              type="submit"
-              className="w-full bg-blue-600 hover:bg-blue-700 text-white py-2 px-4 rounded-lg transition"
-            >
-              {t("contact.submit")}
-            </button>
-          </form>
-        </div>
-      </div>
     </motion.div>
   );
 }

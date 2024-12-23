@@ -1,71 +1,103 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { FaEnvelope, FaFolder, FaTools } from "react-icons/fa";
 import { HiMiniBars3, HiMiniUser } from "react-icons/hi2";
-import { IoMdHome } from "react-icons/io";
 import { Outlet, Link } from "react-router-dom";
 import { Drawer, Select } from "antd";
 import "../App.css";
 import { useTranslation } from "react-i18next";
+import { FaCircleInfo } from "react-icons/fa6";
 const { Option } = Select;
 
 const Rotlayout = () => {
   const { t, i18n } = useTranslation();
 
   const [showMenuDrawer, setShowMenuDrawer] = useState(false);
+  const [isScrolled, setIsScrolled] = useState(false);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      setIsScrolled(window.scrollY > 0);
+    };
+
+    window.addEventListener("scroll", handleScroll);
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+    };
+  }, []);
 
   const handleMenuClick = () => {
     setShowMenuDrawer(false);
   };
 
-  const handleClick = () => {
-    window.open("https://t.me/My_Projectc", "_blank");
-  };
-
   return (
-    <div className="flex flex-col lg:flex-row container mt-5">
-      {/* Sidebar for large screens */}
-      <div className="hidden lg:flex shadow-lg p-4  h-[300px]">
-        <div className="flex flex-col gap-4 bacgrpund p-4 rounded-xl">
-          <Link to="/" className="flex gap-2 items-center">
-            <IoMdHome />
-            {t("Rotlayout.name1")}
+    <div className="container mt-5">
+      {/* Navbar */}
+      <div
+        className={`fixed top-0 left-0 right-0 w-full shadow-md z-50 justify-between flex items-center p-4 ${
+          isScrolled ? "backdrop-blur bg-white/10" : ""
+        }`}
+      >
+        {/* Abdulaziz chap tomonda */}
+        <div className="flex items-center">
+          <Link to="/" className="text-lg font-semibold">
+            <h3 className="gradient-text">{t("My.portfolio")}</h3>
+          </Link>
+        </div>
+
+        {/* Ikonlar markazda */}
+        <div className="hidden lg:flex gap-8 items-center mx-auto">
+          <Link to="/" className="flex gap-2 items-center ">
+            <HiMiniUser className=" text-gray-300" />
+            <h3 className="gradient-text">{t("Rotlayout.name1")}</h3>
           </Link>
           <Link to="/about" className="flex items-center gap-2">
-            <HiMiniUser />
-            {t("Rotlayout.name2")}
+            <FaCircleInfo className=" text-gray-300" />
+            <h3 className="gradient-text">{t("Rotlayout.name2")}</h3>
           </Link>
-          <button className="flex items-center gap-2" onClick={handleClick}>
-            <FaFolder />
-            {t("Rotlayout.name3")}
-          </button>
+          <Link to="/projects" className="flex items-center gap-2">
+            <FaFolder className=" text-gray-300" />
+            <h3 className="gradient-text">{t("Rotlayout.name3")}</h3>
+          </Link>
           <Link to="/skills" className="flex items-center gap-2">
-            <FaTools />
-            {t("Rotlayout.name4")}
+            <FaTools className=" text-gray-300" />
+            <h3 className="gradient-text">{t("Rotlayout.name4")}</h3>
           </Link>
           <Link to="/contact" className="flex items-center gap-2">
-            <FaEnvelope />
-            {t("Rotlayout.name5")}
+            <FaEnvelope className=" text-gray-300" />
+            <h3 className="gradient-text">{t("Rotlayout.name5")}</h3>
           </Link>
+        </div>
+
+        {/* Select dropdown o'ng tomonda - faqat katta ekranlarda */}
+        <div className="hidden lg:block">
           <Select
-            onChange={(value) => i18n.changeLanguage(value)} // tuzatilgan joy
+            onChange={(value) => i18n.changeLanguage(value)}
             defaultValue="uz"
-            style={{ width: 120, marginBottom: "1rem" }}
+            style={{ width: 120 }}
           >
             <Option value="uz">{t("Rotlayout.uzb")}</Option>
             <Option value="en">{t("Rotlayout.eng")}</Option>
             <Option value="ru">{t("Rotlayout.rus")}</Option>
           </Select>
         </div>
+
+        {/* Bars Icon - kichik ekranlar uchun */}
+        <button
+          className="lg:hidden text-xl ml-auto"
+          onClick={() => setShowMenuDrawer(true)}
+        >
+          <HiMiniBars3 />
+        </button>
       </div>
 
-      {/* Drawer for small screens */}
+      {/* Drawer - kichik ekranlar uchun */}
       <Drawer
-        title="Menu"
+        title="My.portfolio"
         placement="right"
-        closable={false} // Remove the default close (X) button
         onClose={() => setShowMenuDrawer(false)}
         open={showMenuDrawer}
         width={240}
+        closable={false} // Remove the default close (X) button
         style={{
           borderRadius: "20px 0px 0px 20px",
           backgroundColor: "#333333",
@@ -73,45 +105,30 @@ const Rotlayout = () => {
         }}
       >
         <div className="flex flex-col gap-4">
-          <Link
-            to="/"
-            className="flex gap-2 items-center"
-            onClick={handleMenuClick}
-          >
-            <IoMdHome />
-            {t("Rotlayout.name1")}
+          <Link to="/" className="flex gap-2 items-center ">
+            <HiMiniUser className=" text-gray-300" />
+            <h3 className="gradient-text">{t("Rotlayout.name1")}</h3>
           </Link>
-          <Link
-            to="/about"
-            className="flex items-center gap-2"
-            onClick={handleMenuClick}
-          >
-            <HiMiniUser />
-            {t("Rotlayout.name2")}
+          <Link to="/about" className="flex items-center gap-2">
+            <FaCircleInfo className=" text-gray-300" />
+            <h3 className="gradient-text">{t("Rotlayout.name2")}</h3>
           </Link>
-          <button className="flex items-center gap-2" onClick={handleClick}>
-            <FaFolder />
-            {t("Rotlayout.name3")}
-          </button>
-          <Link
-            to="/skills"
-            className="flex items-center gap-2"
-            onClick={handleMenuClick}
-          >
-            <FaTools />
-            {t("Rotlayout.name4")}
+          <Link to="/projects" className="flex items-center gap-2">
+            <FaFolder className=" text-gray-300" />
+            <h3 className="gradient-text">{t("Rotlayout.name3")}</h3>
           </Link>
-          <Link
-            to="/contact"
-            className="flex items-center gap-2"
-            onClick={handleMenuClick}
-          >
-            <FaEnvelope />
-            {t("Rotlayout.name5")}
+          <Link to="/skills" className="flex items-center gap-2">
+            <FaTools className=" text-gray-300" />
+            <h3 className="gradient-text">{t("Rotlayout.name4")}</h3>
+          </Link>
+          <Link to="/contact" className="flex items-center gap-2">
+            <FaEnvelope className=" text-gray-300" />
+            <h3 className="gradient-text">{t("Rotlayout.name5")}</h3>
           </Link>
           <Select
-            onChange={(value) => i18n.changeLanguage(value)} // tuzatilgan joy
+            onChange={(value) => i18n.changeLanguage(value)}
             defaultValue="uz"
+            className="custom-select focus:outline-none" // className ni qo'shish
             style={{ width: 120, marginBottom: "1rem" }}
           >
             <Option value="uz">{t("Rotlayout.uzb")}</Option>
@@ -121,18 +138,10 @@ const Rotlayout = () => {
         </div>
       </Drawer>
 
-      {/* Main Content */}
-      <main className="flex-1 hide-scrollbar w-full p-3">
+      {/* Asosiy kontent */}
+      <main className=" w-full p-3 mt-24">
         <Outlet />
       </main>
-
-      {/* Dots Icon Button for small screens */}
-      <button
-        className="lg:hidden fixed top-7 right-4 z-20 text-white p-2 rounded-md"
-        onClick={() => setShowMenuDrawer(true)}
-      >
-        <HiMiniBars3 className=" text-[19px]" />
-      </button>
     </div>
   );
 };
