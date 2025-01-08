@@ -21,10 +21,6 @@ function App() {
           path: "about",
           element: <About />,
         },
-        {
-          path: "projects",
-          element: <MyProjects />,
-        },
 
         {
           path: "skills",

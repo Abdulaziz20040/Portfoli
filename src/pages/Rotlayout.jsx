@@ -14,6 +14,10 @@ const Rotlayout = () => {
   const [showMenuDrawer, setShowMenuDrawer] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
 
+  const handleRedirect = () => {
+    window.open("https://t.me/My_Projectc", "_blank");
+  };
+
   useEffect(() => {
     const handleScroll = () => {
       setIsScrolled(window.scrollY > 0);
@@ -54,10 +58,13 @@ const Rotlayout = () => {
             <FaCircleInfo className=" text-gray-300" />
             <h3 className="gradient-text">{t("Rotlayout.name2")}</h3>
           </Link>
-          <Link to="/projects" className="flex items-center gap-2">
-            <FaFolder className=" text-gray-300" />
+          <div
+            onClick={handleRedirect}
+            className="cursor-pointer flex items-center gap-2"
+          >
+            <FaFolder className="text-gray-300" />
             <h3 className="gradient-text">{t("Rotlayout.name3")}</h3>
-          </Link>
+          </div>
           <Link to="/skills" className="flex items-center gap-2">
             <FaTools className=" text-gray-300" />
             <h3 className="gradient-text">{t("Rotlayout.name4")}</h3>
